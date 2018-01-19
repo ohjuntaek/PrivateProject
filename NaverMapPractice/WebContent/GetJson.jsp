@@ -12,7 +12,7 @@
 
 String j = (String)request.getAttribute("content");
 out.print(j);
-out.print("werwer");
+out.print("werweqwerewerw");
 %>
 <script>
 console.log(<%=j%>);
