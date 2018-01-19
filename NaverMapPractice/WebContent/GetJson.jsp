@@ -12,6 +12,7 @@
 
 String j = (String)request.getAttribute("content");
 out.print(j);
+out.print("asdasweqweasdasdadqee");
 %>
 <script>
 console.log(<%=j%>);

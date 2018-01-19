@@ -62,7 +62,7 @@
 				<input id="submit" type="button" value="주소 검색" />
 			</div>
 		</div>
-		<code id="snippet" class="snippet"></code> <!-- 오 이거 개신기하네 코드가 그대로 나오네  -->
+		<code id="snippet" class="snippet"></code> <!-- 오 이거 개신기하네 코드가asdas 그대로 나오네  -->
 	</div>
 
 	<script id="code">
