@@ -12,7 +12,7 @@
 
 String j = (String)request.getAttribute("content");
 out.print(j);
-out.print("test2test2");
+out.print("test2test2test3");
 %>
 <script>
 console.log(<%=j%>);
