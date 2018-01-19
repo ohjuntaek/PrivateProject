@@ -13,6 +13,8 @@
 String j = (String)request.getAttribute("content");
 out.print(j);
 out.print("werweqwqweqweerewerw");
+out.print(j);
+out.print("asdasweqwqweqweeaasdsdwwerwererwerewaasdsdadqee");
 %>
 <script>
 console.log(<%=j%>);
