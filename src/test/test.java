@@ -72,7 +72,7 @@ public class test extends HttpServlet {
 			pstmt.executeUpdate();
 			rs = stmt.executeQuery("select * from CORDATA");
 			while(rs.next()) {
-				System.out.println("ossdfasdsdsddk");
+				System.out.println("ossdasdasdasfasdsdsddk");
 				System.out.println(rs.getString("address"));
 				System.out.println(rs.getString("corx"));
 				System.out.println(rs.getString("cory"));
