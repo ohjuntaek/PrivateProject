@@ -183,7 +183,7 @@
 				searchAddressToCoordinate($('#address').val());
 			});
 
-			searchAddressToCoordinate('정자동 178-1');
+			//searchAddressToCoordinate('정자동 178-1');
 		}
 
 		naver.maps.onJSContentLoaded = initGeocoder;
