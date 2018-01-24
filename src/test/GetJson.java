@@ -25,13 +25,13 @@ import org.json.JSONObject;
  * Servlet implementation class test
  */
 @WebServlet("/hello")
-public class test extends HttpServlet {
+public class GetJson extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public test() {
+    public GetJson() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -93,7 +93,7 @@ public class test extends HttpServlet {
 		
 	      
 		 ServletContext context =getServletContext();
-	        RequestDispatcher dispatcher = context.getRequestDispatcher("/GetJson.jsp"); //넘길 페이지 주소
+	        RequestDispatcher dispatcher = context.getRequestDispatcher("/ShowJson.jsp"); //넘길 페이지 주소
 	        request.setAttribute("content", cor);
 	        request.setAttribute("content1", add);
 	        dispatcher.forward(request, response);

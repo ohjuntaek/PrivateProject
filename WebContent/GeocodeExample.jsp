@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geocoding service</title>
+    <title>이건한글되니??e</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <script src="./js/jquery-1.9.1.js"></script>
     <meta charset="utf-8">
@@ -37,7 +37,7 @@
       <input id="address" type="textbox" value="Sydney, NSW">
       <input id="submit" type="button" value="Geocode">
     </div>
-    <div id="map"></div>
+    <div id="map" style="width: 100%; height: 600px;"></div>
     <script>
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
