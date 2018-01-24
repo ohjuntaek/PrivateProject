@@ -41,19 +41,18 @@ public class test extends HttpServlet {
 	 */
    
 
-    String json;
+    String cor;
+    String add;
     String out;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("get : "+json);
+		System.out.println("getcor : "+cor);
+		System.out.println("getadd : "+add);
 		
-		JSONObject j = new JSONObject(json);
-		JSONObject result = j.getJSONObject("result");
-		JSONArray items = result.getJSONArray("items");
-		String address = items.getJSONObject(0).getString("address");
-		String CorX = String.valueOf(items.getJSONObject(0).getJSONObject("point").getInt("x"));
-		String CorY = String.valueOf(items.getJSONObject(0).getJSONObject("point").getInt("y"));	
-		System.out.println("address : "+address+" x : "+CorX+" y : "+CorY);
+		JSONObject j = new JSONObject(cor);
+		String CorX = String.valueOf(j.get("lat"));
+		String CorY = String.valueOf(j.get("lng"));	
+		System.out.println("address : "+add+" x : "+CorX+" y : "+CorY);
 		
 		Connection conn = null;
 		Statement stmt = null;
@@ -66,7 +65,7 @@ public class test extends HttpServlet {
 			conn = DriverManager.getConnection(url, "scott", "tiger"); 
 			stmt = conn.createStatement();
 			pstmt = conn.prepareStatement("INSERT INTO CORDATA VALUES (SEQ_ID.NEXTVAL, ?, ?, ?)");
-			pstmt.setString(1, address);
+			pstmt.setString(1, add);
 			pstmt.setString(2, CorX);
 			pstmt.setString(3, CorY);
 			pstmt.executeUpdate();
@@ -95,7 +94,8 @@ public class test extends HttpServlet {
 	      
 		 ServletContext context =getServletContext();
 	        RequestDispatcher dispatcher = context.getRequestDispatcher("/GetJson.jsp"); //넘길 페이지 주소
-	        request.setAttribute("content", json);
+	        request.setAttribute("content", cor);
+	        request.setAttribute("content1", add);
 	        dispatcher.forward(request, response);
 	}
 	
@@ -103,8 +103,11 @@ public class test extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("UTF-8");
-		json = req.getParameter("json");
-		System.out.println("post : "+json);
+		cor = req.getParameter("cor");
+		add = req.getParameter("add");
+		System.out.println("postcor : "+cor);
+		System.out.println("postadd : "+add);
+		
 		//resp.sendRedirect("dbec.pknu.ac.kr/NaverMapPractice/GetJson.jsp");
 		
   

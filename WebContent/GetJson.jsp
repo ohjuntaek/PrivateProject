@@ -11,7 +11,8 @@
 //Manage manage = Manage.getInstance();
 
 String j = (String)request.getAttribute("content");
-out.print(j);
+String j1 = (String)request.getAttribute("content1");
+out.print(j+j1);
 out.print("1test2test3test4");
 %>
 <script>
